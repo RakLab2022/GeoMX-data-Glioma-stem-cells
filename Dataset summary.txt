@@ -1,0 +1,95 @@
+Analysis name:	B022 Cristiana DA
+Analysis created by:	tamiko.nishimura
+Analysis last modified:	01-25-2022 21:55:19
+Software version:	2.3.0.133
+Dataset name:	Q3_5%Filtered
+Dataset created by:	Cristiana
+Dataset last modified:	01-25-2022 21:11:28
+	
+	
+	
+	
+	
+Dataset history detail	
+	
+Segment QC	
+Dataset name	QC
+Created by	Cristiana
+Last modified	01-25-2022 18:55:48
+Derived from	Initial Dataset
+Filter Targets	No
+	
+Thresholds:	
+	
+Used raw reads threshold	Yes
+Raw read threshold	1000
+Used aligned reads threshold	Yes
+Aligned reads threshold	80
+Used stitched reads threshold	Yes
+Stitched read threshold	80
+Used trimmed reads threshold	Yes
+Trimmed read threshold	80
+Used sequencing saturation threshold	Yes
+Sequencing saturation threshold	50
+Used negative probe count geomean threshold	Yes
+Negative probe count geomean threshold	10
+Used NTC threshold	Yes
+No Template Control Count	1000
+Used surface area threshold	Yes
+Surface area QC threshold	16000.0
+Used nuclei count threshold	Yes
+Nuclei count QC threshold	200.0
+	
+	
+Probe QC	
+Dataset name	BioQC
+Created by	Cristiana
+Last modified	01-25-2022 18:57:33
+Derived from	QC
+Remove Failed Segments before executing Probe QC	No
+Used exclude if below probe ratio threshold	Yes
+Ratio of probe geomean across all segments	0.1
+Used exclude if below Grubbs fail percent threshold	Yes
+Percent AOIs threshold for Grubbs test	20
+Used exclude local segment outliers	No
+Standard deviation amount for the LOQ	2
+	
+	
+Expression filtering	
+Dataset name	Filter5%
+Created by	Cristiana
+Last modified	01-25-2022 19:03:30
+Derived from	BioQC
+Expression filtering mode	HIGHER_OF_LOQ_AND_USER_DEFINED
+Filtering by	TARGET
+Frequency	5
+User-defined value	2
+	
+	
+Normalization	
+Dataset name	Q3_5%Filtered
+Created by	Cristiana
+Last modified	01-25-2022 21:11:28
+Derived from	Filter5%
+Filter segment	No
+Filter Targets	Yes
+Reference targets	"Cannot display name list, please select 2000 targets or less."
+Method	THIRD_QUARTILE
+	
+	
+Statistical tests	
+	
+	
+Statistical test name	small vs large LMM
+Dataset name	Q3_5%Filtered
+Test type	LMM
+Correction type	BH
+Groups Summary	"All Targets: 19963 zones, All Probes: 20175 zone"
+	
+	
+	
+Statistical test name	t test small large
+Dataset name	Q3_5%Filtered
+Test type	NonePairedTTest
+Correction type	None
+Groups Summary	"All Targets: 19963 zones, All Probes: 20175 zone"
